@@ -1,0 +1,105 @@
+<{% extends 'base/navbar.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="container bg-white shadow-md p-5 form-layout"> 
+        
+        <section class="about section-padding" id="about">
+            <div class="container">
+                <div>
+                    <h1 class="mb-5 text-center"><b>DASHBOARD</b></h1>
+                </div><br>
+                <div class="row about-third justify-content-center" style="max-width: 1000px; margin: 0 auto;">
+                    <!-- Kotak 3x3 -->
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>SKILL</b></h3>
+                        <a href="{% url 'view-skill' %}">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/skill.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>PORTOFOLIO</b></h3>
+                        <a href="{% url 'view-porto' %}">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/portofolio.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>COURSE</b></h3>
+                        <a href="{% url 'view-course' %}">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/eeducation.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>CERTIFICATE</b></h3>
+                        <a href="{% url 'view-certi' %}">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/certificate.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>WORK EXPERIENCE</b></h3>
+                        <a href="{% url 'view-workexp' %}">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/workexp.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>BLOG</b></h3>
+                        <a href="{% url 'view-blog' %}">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/blog.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>CONTACT</b></h3>
+                        <a href="#">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/contact.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>PROJECTS</b></h3>
+                        <a href="#">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/projects.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg-4 col-md-6 col-12 text-center mb-4">
+                        <h3><b>BLOG</b></h3>
+                        <a href="#">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 20vh;"> 
+                                <img src="{% static 'images/icon/x.png' %}" style="max-width: 100px;">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <br>
+        <br><br>
+        <a class="btn btn-danger" href="{% url 'my-logout' %}"> Log Out </a>
+
+    </div>
+</div> 
+    
+{% endblock content %}

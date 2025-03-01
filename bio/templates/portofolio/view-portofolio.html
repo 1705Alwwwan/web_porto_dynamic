@@ -1,0 +1,49 @@
+<{% extends 'base/navbar.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="container bg-white shadow-md p-5 form-layout"> 
+        <div>
+            <h1 class="text-center">View Your Portofolio</h1>
+        </div>
+        <br><br>
+        <div>
+            <a href="{% url 'create-porto' %}" class="btn btn-success"> Write Your Portofolio </a> 
+            &nbsp; &nbsp;
+            <a href="{% url 'dashboard' %}" class="btn btn-light"> Go Back</a>
+        </div>
+        <br><br>
+            <div>
+
+                {% for portofoliodata in  PortofolioData %}
+                <div class="container bg-white shadow-md p-5 form-layout"> 
+                    <img src="{{ portofoliodata.image.url }}" alt="{{ portofoliodata.title }}" style="width: 200px; height: auto; border-radius: 10px;">
+                <p>{{portofoliodata.title}}</p><br>
+                <p>{{portofoliodata.do_date}}</p><br>
+                <p>{{portofoliodata.description}}</p><br>
+
+                <div>
+                    <a href="{% url 'update-porto' portofoliodata.id %}" class="btn btn-primary">Edit</a> 
+                    &nbsp; &nbsp;
+                    <a href="{% url 'delete-porto' portofoliodata.id %}" class="btn btn-danger" >Delete</a>
+                </div>
+                </div>
+
+                {% endfor %}
+            </div>    
+         </div>
+    </div>> 
+</div> 
+{% endblock content %}
+
+  
+
+
+
+
+
+    
+
+
+

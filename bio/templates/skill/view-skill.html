@@ -1,0 +1,48 @@
+<{% extends 'base/navbar.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="container bg-white shadow-md p-5 form-layout"> 
+        <div>
+            <h1 class="text-center">View Your Portofolio</h1>
+        </div>
+        <br><br>
+        <div>
+            <a href="{% url 'create-skill' %}" class="btn btn-success"> Write Your Portofolio </a> 
+            &nbsp; &nbsp;
+            <a href="{% url 'dashboard' %}" class="btn btn-light"> Go Back</a>
+        </div>
+        <br><br>
+            <div>
+
+                {% for dataskill in  DataSkill %}
+                <div class="container bg-white shadow-md p-5 form-layout"> 
+                <p>{{dataskill.kind_skill}}</p><br>
+                <p>{{dataskill.skill_name}}</p><br>
+
+
+                <div>
+                    <a href="{% url 'update-skill' dataskill.id %}" class="btn btn-primary">Edit</a> 
+                    &nbsp; &nbsp;
+                    <a href="{% url 'delete-skill' dataskill.id %}" class="btn btn-danger" >Delete</a>
+                </div>
+                </div>
+
+                {% endfor %}
+            </div>    
+         </div>
+    </div>> 
+</div> 
+{% endblock content %}
+
+  
+
+
+
+
+
+    
+
+
+

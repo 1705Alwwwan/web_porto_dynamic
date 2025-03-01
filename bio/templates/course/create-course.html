@@ -1,0 +1,79 @@
+<{% extends 'base/navbar.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
+
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="container bg-white shadow-md p-5 form-layout"> 
+            <h3> What's your course?</h3>
+            <br>
+            <form method="post" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                
+                <div class="mb-3">
+                    {{ CourseForm.title|as_crispy_field }}
+                </div>
+
+
+                <div class="mb-3">
+                    {{ CourseForm.do_date|as_crispy_field }}
+                </div>
+
+                <div class="mb-3">
+                    {{ CourseForm.is_current|as_crispy_field }}
+                </div>
+
+                <div class="mb-3" id="end_date_div">
+                    {{ CourseForm.end_date|as_crispy_field }}
+                </div>
+
+                <div class="mb-3">
+                    {{ CourseForm.description|as_crispy_field }}
+                </div>
+
+                <div class="mb-3">
+                    {{ CourseForm.image|as_crispy_field }}
+                </div>
+                            
+
+                <div>
+                    <button class="btn btn-secondary btn-lg w-100 btn-block p-2" type="submit">BUAT DATA </button>
+                    <br><br>
+                    <a class="btn btn-secondary btn-lg w-100 btn-block p-2" href="{% url 'view-course' %}">GO BACK </a>
+                </div>
+            </form>
+
+<script>
+    function toggleEndDate() {
+        var checkBox = document.getElementById("id_is_current");  // ID bawaan Django
+        var endDateDiv = document.getElementById("div_id_end_date");  // Django otomatis buat div ini
+        var endDateInput = document.getElementById("id_end_date");
+
+        if (checkBox.checked) {
+            endDateDiv.style.display = "none";
+            endDateInput.value = "";  // Kosongkan end_date jika checkbox dicentang
+        } else {
+            endDateDiv.style.display = "block";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        toggleEndDate();
+        document.getElementById("id_is_current").addEventListener("change", toggleEndDate);
+    });
+</script>
+
+        </div>
+    </div>
+    </body>
+</html>    
+{% endblock content %}

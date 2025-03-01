@@ -1,0 +1,35 @@
+<{% extends 'base/navbar.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
+
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="container bg-white shadow-md p-5 form-layout"> 
+            <h3> Update Blog</h3>
+            <br>
+            <form method="post" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{UpdateDataBlog|crispy}}
+                       
+
+                <div>
+                    <button class="btn btn-secondary btn-lg w-100 btn-block p-2" type="submit">BUAT DATA </button>
+                    <br><br>
+                    <a class="btn btn-secondary btn-lg w-100 btn-block p-2" href="{% url 'view-blog' %}">GO BACK <     /a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    </body>
+</html>    
+{% endblock content %}

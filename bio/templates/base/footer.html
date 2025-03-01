@@ -1,0 +1,59 @@
+{% block content %}
+     <section class="contact section-padding pt-0 bg-dark text-light"  id="contact">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-6 col-12">
+            <form action="#" method="get" class="contact-form webform"  role="form">
+                
+                <div class="form-group d-flex flex-column-reverse">
+                    <input type="text" class="form-control" name="cf-name" id="cf-name" placeholder="Your Name">
+
+                    <label for="cf-name" class="webform-label">Full Name</label>
+                </div>
+
+                <div class="form-group d-flex flex-column-reverse">
+                    <input type="email" class="form-control" name="cf-email" id="cf-email" placeholder="Your Email">
+
+                    <label for="cf-email" class="webform-label">Your Email</label>
+                </div>
+
+                <div class="form-group d-flex flex-column-reverse">
+                    <textarea class="form-control" rows="5" name="cf-message" id="cf-message" placeholder="Your Message"></textarea>
+
+                    <label for="cf-message" class="webform-label">Message</label>
+                </div>
+
+                <button type="submit" class="form-control" id="submit-button" onclick="sendToWhatsapp()" >Send</button>
+            </form>
+          </div>
+
+            <div class="mx-auto col-lg-4 col-md-6 col-12">
+                <h3 class="my-4 pt-4 pt-lg-0">Say hello</h3>
+
+                <p class="mb-1" style="color: yellow;">alway on 24hours</p>
+
+                <p>
+                    <a href="mailto:alwwwan.farhan@gmail.com" style="color: yellow;">
+                        alwwwan.farhan@gmail.com
+                    <i class="fas fa-arrow-right custom-icon"></i>
+                    </a>
+                </p>
+
+                <ul class="social-links mt-2">
+                    <li><a href="https://www.facebook.com/alwan.f.aziz/" rel="noopener" class="fab fa-facebook"></a></li>
+                    <li><a href="https://www.instagram.com/alwwwan_far?igsh=MTdhcjhvY3U0MmZkdw==" rel="noopener" class="fab fa-instagram"></a></li>
+                    <li><a href="https://www.linkedin.com/in/alwan-farhan-aziz-5289aa194/" rel="noopener" class="fab fa-linkedin"></a></li>
+                    <li><a href="https://github.com/1705Alwwwan" rel="noopener" class="fa-brands fa-github"></a></li>
+                    
+                </ul>
+                
+              <p class="copyright-text mt-5 pt-3">Copyright &copy; 2025 </p>
+                
+                
+            </div>
+
+        </div>
+      </div>
+    </section>    
+{% endblock content %}    

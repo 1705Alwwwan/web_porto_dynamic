@@ -1,0 +1,55 @@
+<{% extends 'base/navbar.html' %}
+{% load crispy_forms_tags %}
+{% block content %} 
+<div class="container">
+    <div class="container bg-white shadow-md p-5 form-layout"> 
+        <div>
+            <h1 class="text-center">View Your Work Experiences</h1>
+        </div>
+        <br><br>
+        <div>
+            <a href="{% url 'create-workexp' %}" class="btn btn-success"> Write Your Portofolio </a> 
+            &nbsp; &nbsp;
+            <a href="{% url 'dashboard' %}" class="btn btn-light"> Go Back</a>
+        </div>
+        <br><br>
+
+        <div>
+            {% for workexp in work_exp %}
+            <div>
+                <img src="{{ workexp.image.url }}" alt="{{ workexp.location }}" width="150">
+            </div>
+            <p><strong>Jabatan:</strong> {{ workexp.job_title }}</p>
+            <p><strong>Perusahaan:</strong> {{ workexp.company_name }}</p>
+            <p><strong>Lokasi:</strong> {{ workexp.location }}</p>
+        
+            <p><strong>Periode:</strong> {{ workexp.start_date }} - 
+                {% if workexp.is_current %}
+                    <span class="text-success">Sedang Bekerja</span>
+                {% else %}
+                    {{ workexp.end_date }}
+                {% endif %}
+            </p>
+        
+            <p><strong>Deskripsi:</strong> {{ workexp.description }}</p>
+        
+            <div>
+                <a href="{% url 'update-workexp' workexp.id %}" class="btn btn-primary">Edit</a>
+                &nbsp; &nbsp;
+                <a href="{% url 'delete-workexp' workexp.id %}" class="btn btn-danger">Delete</a>
+            </div>
+        
+            <hr>  <!-- Tambahkan garis pemisah antar pengalaman kerja -->
+            {% endfor %}
+            <br><br>
+        </div>
+</div>        
+</div>
+</div>
+    
+{% endblock content %}
+
+
+
+
+

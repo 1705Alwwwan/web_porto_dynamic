@@ -1,0 +1,86 @@
+<{% extends 'base/navbar.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h3><b>TAMAHKAN DATA</b></h3>
+       
+        <hr>
+        <form method="POST" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %} 
+
+            <div class="mb-3">
+                {{ CreateWorkExpForm.job_title|as_crispy_field }}
+            </div>
+    
+            <div class="mb-3">
+                {{ CreateWorkExpForm.company_name|as_crispy_field }}
+            </div>
+    
+            <div class="mb-3">
+                {{ CreateWorkExpForm.location|as_crispy_field }}
+            </div>
+    
+            <div class="mb-3">
+                {{ CreateWorkExpForm.start_date|as_crispy_field }}
+            </div>
+    
+            <div class="mb-3">
+                {{ CreateWorkExpForm.is_current|as_crispy_field }}
+            </div>
+    
+            <div class="mb-3" id="end_date_div">
+                {{ CreateWorkExpForm.end_date|as_crispy_field }}
+            </div>
+    
+            <div class="mb-3">
+                {{ CreateWorkExpForm.description|as_crispy_field }}
+            </div>
+    
+            <div class="mb-3">
+                {{ CreateWorkExpForm.image|as_crispy_field }}
+            </div>
+
+
+            
+            <br>
+
+            <button class="btn btn-secondary btn-lg w-100 btn-block p-2" type="submit">BUAT DATA </button>
+            <br><br>
+            <a class="btn btn-secondary btn-lg w-100 btn-block p-2" href="{% url 'view-workexp' %}">GO BACK </a>
+        </form>
+    </div>
+    </div>
+
+    <script>
+        function toggleEndDate() {
+            var checkBox = document.getElementById("id_is_current");  // ID bawaan Django
+            var endDateDiv = document.getElementById("div_id_end_date");  // Django otomatis buat div ini
+            var endDateInput = document.getElementById("id_end_date");
+    
+            if (checkBox.checked) {
+                endDateDiv.style.display = "none";
+                endDateInput.value = "masih bekerja";  // Kosongkan end_date jika checkbox dicentang
+            } else {
+                endDateDiv.style.display = "block";
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleEndDate();
+            document.getElementById("id_is_current").addEventListener("change", toggleEndDate);
+        });
+    </script>
+</body>
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,101 @@
+{% block content %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .list-group-item {
+        border-left: 5px solid #0d6efd;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+    }
+    .list-group-item:hover {
+        transform: scale(1.02);
+    }
+    .job-icon {
+        font-size: 1.5rem;
+        color: #0d6efd;
+        margin-right: 10px;
+    }
+</style>
+<section id="explore" class="explore">
+    <div class="container">
+        <div class="container mt-5">
+            <h3 class="mb-4 text-primary text-center">WORK EXPERIENCES</h3>
+            <ul class="list-group">
+                <!-- Pengalaman 1 -->
+                <li class="list-group-item p-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-laptop-code job-icon"></i>
+                        <div>
+                            <h5 class="mb-1">IT OPERATIONAL AND INFRASTRUCTURE</h5>
+                            <p>PT Supravisi Rama Optik Manufacturing - ESSILORLUXOTTICA GROUP</p>
+                            <small class="text-muted">Nov 2022 - Now</small>
+                        </div>
+                    </div>
+                    <ul class="mt-2">
+                        <li>Make and developed the new topology of device computer and machines.</li>
+                        <li>Maintenance every asset of IT for technical and administration.</li>
+                        <li>Make automation and local program.</li>
+                        <li>Update OS and Software</li>
+                        <li>Provisioning and subnetting system</li>
+                        <li>Set up machine</li>
+                    </ul>
+                </li>
+        
+                <!-- Pengalaman 2 -->
+                <li class="list-group-item p-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-code job-icon"></i>
+                        <div>
+                            <h5 class="mb-1">GENERAL AFFAIR </h5>
+                            <p>PT Amartha Mikro Fintek</p>
+                            <small class="text-muted">April, 2022 - Sept, 2022</small>
+                        </div>
+                    </div>
+                    <ul class="mt-2">
+                        <li>Get expansion the office operational.</li>
+                        <li>Make agreement between company and building owner.</li>
+                        <li>Make administration and submitting to company about the condition and strategy of building.</li>
+                    </ul>
+                </li>
+        
+                <!-- Pengalaman 3 -->
+                <li class="list-group-item p-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-database job-icon"></i>
+                        <div>
+                            <h5 class="mb-1">ENGLISH AND COMPUTER TEACHER</h5>
+                            <p>Madrasah I'tidaiyah Assuyutiyah</p>
+                            <p>Juniour High School Islamic Green School</p>
+                            <p>LPK. Esan Education Course</p>
+                            <small class="text-muted">August, 2016 - February, 2022</small>
+                        </div>
+                    </div>
+                    <ul class="mt-2">
+                        <li>Teach english and computer science.</li>
+                        <li>Make administration of teaching.</li>
+                    </ul>
+                </li>
+
+                <li class="list-group-item p-4">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-database job-icon"></i>
+                        <div>
+                            <h5 class="mb-1">IT SUPPORT</h5>
+                            <p>PT Mitratek Indonesia</p>
+                            <small class="text-muted">August, 2016 - Dec, 2016</small>
+                        </div>
+                    </div>
+                    <ul class="mt-2">
+                        <li>Make infrastructure of network.</li>
+                        <li>Set up access point.</li>
+                        <li>Maintenance client</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <br><br>  
+{% endblock content %}
